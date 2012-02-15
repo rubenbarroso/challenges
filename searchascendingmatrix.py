@@ -25,7 +25,7 @@ Your task is to write the requested search function.
 """
 
 def search(k, matrix):
-    """ We loop over the diagonal elements looking for the first one greather
+    """ We loop over the diagonal elements looking for the first one greater
         than the number.Then, we carry out a linear search over the elements
         from the previous diagonal element -what we refer to as pivot- and
         the current one. It is easily seen that this algorithm is O(m + n). """
@@ -37,15 +37,14 @@ def search(k, matrix):
                 return i
         return -1
 
-    m = len(matrix)
-    for i in range(m):
+    for i in range(len(matrix)):
         pivot = matrix[i][i]
         if k == pivot:
             return i, i
         elif k < pivot:
             if i is 0:
                 # upper left element bigger than searched number,
-                # hence all elements of the matrix bigger also
+                # hence all elements of the matrix bigger also;
                 # therefore not present
                 return -1
             else:
@@ -58,14 +57,14 @@ def search(k, matrix):
                 upper_index = linear_search(k, upper_slice)
                 if upper_index != -1:
                     return i, upper_index
-                    # not found
+    # not found
     return -1
 
 # Tests
-matrix = [[1, 5, 7, 9],
-    [4, 6, 10, 15],
-    [8, 11, 12, 19],
-    [14, 16, 18, 21]]
+matrix = [[1,   5,  7,  9],
+          [4,   6, 10, 15],
+          [8,  11, 12, 19],
+          [14, 16, 18, 21]]
 
 assert search(11, matrix) == (2, 1)
 assert search(5, matrix) == (0, 1)
