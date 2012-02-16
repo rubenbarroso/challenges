@@ -36,7 +36,7 @@ assert c(3, 3) == 1
 
 
 def pascal(n=6):
-    """ Pretty-print a Pascal's Triangle until a specific row n (0-indexed) """
+    """ Pretty-print a Pascal's Triangle until a specific row n """
 
     def indent_fill(line, line_size):
         return ' ' * ((line_size - len(line)) / 2)
@@ -59,9 +59,9 @@ pascal()
 
 #Output
 #
-#      1
-#     1 1
-#    1 2 1
-#   1 3 3 1
-#  1 4 6 4 1
+#       1
+#      1 1
+#     1 2 1
+#    1 3 3 1
+#   1 4 6 4 1
 # 1 5 10 10 5 1
